@@ -1,2 +1,6 @@
 # metho-set
-Set prototype extensions
+Set prototype extensions:
+
+* union
+* intersect
+* difference
