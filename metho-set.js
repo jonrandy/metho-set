@@ -6,7 +6,7 @@ const target = Set.prototype
 // Union
 export const union = Metho.add(
   target,
-  function(set) {
+  function union(set) {
     return new Set([...this, ...set])
   }
 )
@@ -14,7 +14,7 @@ export const union = Metho.add(
 // Intersection
 export const intersect = Metho.add(
   target,
-  function(set) {
+  function intersect(set) {
     return new Set([...this].filter(i=>set.has(i)))
   }
 )
@@ -22,7 +22,7 @@ export const intersect = Metho.add(
 // Difference
 export const difference = Metho.add(
   target,
-  function(set) {
+  function difference(set) {
     return new Set([...this].filter(i=>!set.has(i)))
   }
 )
