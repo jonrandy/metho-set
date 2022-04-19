@@ -34,5 +34,9 @@ b[every(i => i < 4)] // false
 a[groupBy((n) => n % 2 === 0 ? 'even' : 'odd')]
 // { even: Set [ 2 ], odd: Set [ 1, 3 ] }
 
-
+// Callback to `map`, `filter`, `some`, and `every` receives:
+// `value`, `key` (= `value`, see Set#forEach), `set`
+const hasDouble = (n, _, set) => set.has(n * 2)
+a[some(hasDouble)] // true
+b[some(hasDouble)] // false
 ```

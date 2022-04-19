@@ -31,7 +31,7 @@ export const difference = Metho.add(
 export const map = Metho.add(
   target,
   function map(fn) {
-    return new Set([...this].map(i => fn(i)));
+    return new Set([...this].map(i => fn(i, i, this)))
   }
 )
 
@@ -39,7 +39,7 @@ export const map = Metho.add(
 export const filter = Metho.add(
   target,
   function filter(fn) {
-  return new Set([...this].filter(i => fn(i)));
+  return new Set([...this].filter(i => fn(i, i, this)))
   }
 )
 
@@ -47,7 +47,7 @@ export const filter = Metho.add(
 export const some = Metho.add(
   target,
   function some(fn) {
-    return [...this].some(i => fn(i));
+    return [...this].some(i => fn(i, i, this))
   }
 )
 
@@ -55,7 +55,7 @@ export const some = Metho.add(
 export const every = Metho.add(
   target,
   function every(fn) {
-    return [...this].every(i => fn(i));
+    return [...this].every(i => fn(i, i, this))
   }
 )
 
@@ -73,7 +73,7 @@ export const groupBy = Metho.add(
       }
 
       result[key].add(i)
-    }, {});
+    }, {})
 
     return result
   }
