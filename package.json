@@ -1,6 +1,6 @@
 {
   "name": "metho-set",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JavaScript Set prototype extensions using Metho",
   "main": "metho-set.js",
   "type": "module",
