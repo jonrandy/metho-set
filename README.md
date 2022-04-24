@@ -26,11 +26,11 @@ a[filter(i => i % 2 !== 0)] // Set [ 1, 3 ]
 a[some(i => i < 3)] // true
 a[some(i => i > 5)] // false
 
-// every - test if all valuee conform to predicate
+// every - test if all values conform to predicate
 a[every(i => i < 4)] // true
 b[every(i => i < 4)] // false
 
-// groupBy - group into sub-Sets in object with key given by the callback
+// groupBy - group into subsets in object with key given by the callback
 a[groupBy((n) => n % 2 === 0 ? 'even' : 'odd')]
 // { even: Set [ 2 ], odd: Set [ 1, 3 ] }
 
