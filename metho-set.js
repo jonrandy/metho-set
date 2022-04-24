@@ -27,3 +27,54 @@ export const difference = Metho.add(
   }
 )
 
+// Map items
+export const map = Metho.add(
+  target,
+  function map(fn) {
+    return new Set([...this].map(i => fn(i, i, this)))
+  }
+)
+
+// Filter
+export const filter = Metho.add(
+  target,
+  function filter(fn) {
+  return new Set([...this].filter(i => fn(i, i, this)))
+  }
+)
+
+// Some
+export const some = Metho.add(
+  target,
+  function some(fn) {
+    return [...this].some(i => fn(i, i, this))
+  }
+)
+
+// Every
+export const every = Metho.add(
+  target,
+  function every(fn) {
+    return [...this].every(i => fn(i, i, this))
+  }
+)
+
+// Group by
+export const groupBy = Metho.add(
+  target,
+  function groupBy(fn) {
+    const result = Object.create(null)
+
+     this.forEach(i => {
+      const key = fn(i)
+
+      if (!result[key]) {
+        result[key] = new Set()
+      }
+
+      result[key].add(i)
+    }, {})
+
+    return result
+  }
+)
