@@ -38,7 +38,7 @@ export const map = Metho.add(
 export const filter = Metho.add(
   target,
   function filter(fn) {
-  return new Set([...this].filter(i => fn(i, i, this)))
+    return new Set([...this].filter(i => fn(i, i, this)))
   }
 )
 
